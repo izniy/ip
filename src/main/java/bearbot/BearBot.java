@@ -1,13 +1,19 @@
 package bearbot;
 
 import java.util.Scanner;
+import bearbot.commands.*;
 
 public class BearBot {
     // This class handles the program logic
+    private static final int MAX_TASKS = 100;
+    private String[] tasks;
+    private int taskCount;
     private Ui ui;
     private Scanner scanner;
 
     public BearBot() {
+        tasks = new String[MAX_TASKS];
+        taskCount = 0;
         ui = new Ui();
         scanner = new Scanner(System.in);
     }
@@ -20,11 +26,16 @@ public class BearBot {
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("bye")) {
                 break;
+            } else if (input.equalsIgnoreCase("list")) {
+                new ListCommand(tasks, taskCount).execute();
+            } else {
+                new AddCommand(tasks, taskCount, input).execute();
+                taskCount++;
             }
-            ui.echo(input);
         }
         ui.showGoodbyeMessage();
     }
+
     public static void main(String[] args) {
         new BearBot().run();
     }
