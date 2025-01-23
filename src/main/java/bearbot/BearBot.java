@@ -36,9 +36,8 @@ public class BearBot {
             } else if (input.startsWith("unmark")) {
                 int taskIndex = Integer.parseInt(input.split(" ")[1]) - 1;
                 new UnmarkCommand(this.tasks, taskIndex).execute();
-            } else {
-                Task newTask = new Task(input);
-                new AddCommand(tasks, newTask).execute();
+            } else if (input.startsWith("todo") || input.startsWith("deadline") || input.startsWith("event")) {
+                new AddCommand(this.tasks, input).execute();
             }
         }
         ui.showGoodbyeMessage();
