@@ -10,8 +10,4 @@ public class Ui {
     public void showGoodbyeMessage() {
         System.out.println(" Bye. Hope to see you again soon!");
     }
-
-    public void echo(String input) {
-        System.out.println(input);
-    }
 }
