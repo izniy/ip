@@ -37,6 +37,13 @@ public class BearBot {
             } else if (input.startsWith("unmark")) {
                 int taskIndex = Integer.parseInt(input.split(" ")[1]) - 1;
                 new UnmarkCommand(this.tasks, taskIndex).execute();
+            } else if (input.startsWith("delete")){
+                try {
+                    int index = Integer.parseInt(input.split(" ")[1]) - 1; // Convert to 0-based index
+                    new DeleteCommand(tasks, index).execute();
+                } catch (BearBotException e) {
+                    System.out.println(e.getMessage());
+                }
             } else {
                 try {
                     new AddCommand(this.tasks, input).execute();
