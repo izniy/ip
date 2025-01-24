@@ -2,7 +2,8 @@ package bearbot;
 
 import java.util.Scanner;
 import bearbot.commands.*;
-import bearbot.tasks.Task;
+import bearbot.exceptions.*;
+import bearbot.tasks.*;
 import java.util.ArrayList;
 
 public class BearBot {
@@ -36,8 +37,18 @@ public class BearBot {
             } else if (input.startsWith("unmark")) {
                 int taskIndex = Integer.parseInt(input.split(" ")[1]) - 1;
                 new UnmarkCommand(this.tasks, taskIndex).execute();
-            } else if (input.startsWith("todo") || input.startsWith("deadline") || input.startsWith("event")) {
-                new AddCommand(this.tasks, input).execute();
+            } else {
+                try {
+                    new AddCommand(this.tasks, input).execute();
+                } catch (TaskLimitException e) {
+                    System.out.println(e.getMessage());
+                } catch (EmptyDescriptionException e) {
+                    System.out.println(e.getMessage());
+                } catch (BearBotException e) {
+                    System.out.println(e.getMessage());
+                } catch (Exception e) {
+                    System.out.println("UNKNOWN ERROR");
+                }
             }
         }
         ui.showGoodbyeMessage();
