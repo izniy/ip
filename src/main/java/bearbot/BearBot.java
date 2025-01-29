@@ -10,8 +10,8 @@ public class BearBot {
     private static final String FILE_PATH = "./data/bearbot.txt"; // Path to store tasks
     private final TaskList taskList;
     private final Storage storage;
-    private Ui ui;
-    private Scanner scanner;
+    private final Ui ui;
+    private final Scanner scanner;
 
     public BearBot() {
         this.storage = new Storage(FILE_PATH); // Storage now knows where to read from/ write to
@@ -39,37 +39,15 @@ public class BearBot {
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("bye")) {
                 break;
-            } else if (input.equalsIgnoreCase("list")) {
-                new ListCommand(this.taskList).execute();
-            } else if (input.startsWith("mark")) {
-                int taskIndex = Integer.parseInt(input.split(" ")[1]) - 1;
-                try {
-                    new MarkCommand(this.taskList, taskIndex).execute();
-                } catch (BearBotException e) {
-                    System.out.println(e.getMessage());
-                }
-            } else if (input.startsWith("unmark")) {
-                int taskIndex = Integer.parseInt(input.split(" ")[1]) - 1;
-                try {
-                    new UnmarkCommand(this.taskList, taskIndex).execute();
-                } catch (BearBotException e) {
-                    System.out.println(e.getMessage());
-                }
-            } else if (input.startsWith("delete")) {
-                try {
-                    int index = Integer.parseInt(input.split(" ")[1]) - 1;
-                    new DeleteCommand(taskList, index).execute();
-                } catch (BearBotException e) {
-                    System.out.println(e.getMessage());
-                }
-            } else {
-                try {
-                    new AddCommand(this.taskList, input).execute();
-                } catch (BearBotException e) {
-                    System.out.println(e.getMessage());
-                } catch (Exception e) {
-                    System.out.println("UNKNOWN ERROR");
-                }
+            }
+
+            try {
+                Command command = Parser.parse(input, taskList);
+                command.execute();
+            } catch (BearBotException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("UNKNOWN ERROR TO BEARS");
             }
         }
 

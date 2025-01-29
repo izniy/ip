@@ -1,5 +1,7 @@
 package bearbot.tasks;
 
+import java.time.LocalDate;
+
 public abstract class Task {
     protected String description;
     protected boolean isDone;
@@ -22,9 +24,9 @@ public abstract class Task {
             case "T":
                 return new Todo(description, isDone);
             case "D":
-                return new Deadline(description, parts[3], isDone);
+                return new Deadline(description, LocalDate.parse(parts[3]), isDone);
             case "E":
-                return new Event(description, parts[3], parts[4], isDone);
+                return new Event(description, LocalDate.parse(parts[3]), LocalDate.parse(parts[4]), isDone);
             default:
                 throw new IllegalArgumentException("Invalid task type in storage file");
         }
