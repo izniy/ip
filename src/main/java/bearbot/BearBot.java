@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import bearbot.commands.*;
 import bearbot.exceptions.*;
+import bearbot.storage.Storage;
 import bearbot.tasks.*;
+import bearbot.parser.Parser;
 
 public class BearBot {
     private static final String FILE_PATH = "./data/bearbot.txt"; // Path to store tasks

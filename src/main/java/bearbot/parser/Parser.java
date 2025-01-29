@@ -1,4 +1,4 @@
-package bearbot;
+package bearbot.parser;
 
 import bearbot.commands.*;
 import bearbot.exceptions.BearBotException;

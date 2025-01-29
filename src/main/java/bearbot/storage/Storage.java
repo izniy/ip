@@ -1,7 +1,6 @@
-package bearbot;
+package bearbot.storage;
 
 import bearbot.tasks.Task;
-import bearbot.tasks.TaskList;
 
 import java.io.*;
 import java.util.ArrayList;

@@ -1,6 +1,7 @@
 package bearbot.commands;
 
 import bearbot.exceptions.*;
+import bearbot.tasks.Task;
 import bearbot.tasks.TaskList;
 
 import java.util.List;
@@ -19,9 +20,12 @@ public class DeleteCommand extends Command {
         if (index < 0 || index >= taskList.getSize()) {
             throw new BearBotException("Task index is out of range!");
         }
+
+        Task toRemove = taskList.getOneTask(index);
         taskList.removeTask(index);
+
         System.out.println("Out of the honey jar!");
-        System.out.println(taskList.getOneTask(index));
+        System.out.println(toRemove);
         System.out.println("Now you have " + taskList.getSize() + " tasks in the list.");
     }
 }
