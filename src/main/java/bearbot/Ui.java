@@ -1,7 +1,10 @@
 package bearbot;
 
+import java.util.Scanner;
+
 public class Ui {
     // User Interface class to handle interactions with user
+
     public void showWelcomeMessage() {
         System.out.println(" ฅ՞•ﻌ•՞ฅ ฅ՞•ﻌ•՞ฅ ฅ՞•ﻌ•՞ฅ ฅ՞•ﻌ•՞ฅ ฅ՞•ﻌ•՞ฅ ฅ՞•ﻌ•՞ฅ ฅ՞•ﻌ•՞ฅ ");
         System.out.println(" Hello! I'm BearBot, your trusted Bear companion!");
@@ -14,4 +17,5 @@ public class Ui {
         System.out.println(" Bye. Hope to see you again soon!");
         System.out.println(" ฅ՞•ﻌ•՞ฅ ฅ՞•ﻌ•՞ฅ ฅ՞•ﻌ•՞ฅ ฅ՞•ﻌ•՞ฅ ฅ՞•ﻌ•՞ฅ ฅ՞•ﻌ•՞ฅ ฅ՞•ﻌ•՞ฅ ");
     }
+
 }

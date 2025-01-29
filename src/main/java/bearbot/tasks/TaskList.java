@@ -59,4 +59,12 @@ public class TaskList {
     public List<Task> getTasks() {
         return tasks;
     }
+
+    public int getSize() {
+        return tasks.size();
+    }
+
+    public Task getOneTask(int index) {
+        return tasks.get(index);
+    }
 }

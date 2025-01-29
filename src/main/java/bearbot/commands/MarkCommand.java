@@ -14,11 +14,11 @@ public class MarkCommand extends Command {
 
     @Override
     public void execute() throws BearBotException {
-        if (index < 0 || index >= taskList.getTasks().size()) {
+        if (index < 0 || index >= taskList.getSize()) {
             throw new BearBotException("Task index is out of range!");
         }
         taskList.markTask(index);
         System.out.println("Nice! I've marked this task as done:");
-        System.out.println(taskList.getTasks().get(index));
+        System.out.println(taskList.getOneTask(index));
     }
 }

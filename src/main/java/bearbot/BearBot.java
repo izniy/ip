@@ -25,7 +25,6 @@ public class BearBot {
             // TaskList catches IOException, but there could be other exceptions too
         } catch (Exception e) { // Catches all exception because BearBot needs a valid TaskList no matter what
             System.out.println("Error loading tasks. Starting with an empty list.");
-            System.out.println();
             tempTaskList = new TaskList(storage, new ArrayList<>());  // Start fresh if loading fails
         }
         this.taskList = tempTaskList;

@@ -1,5 +1,6 @@
 package bearbot.commands;
 
+import bearbot.Ui;
 import bearbot.exceptions.*;
 import bearbot.tasks.*;
 
@@ -41,7 +42,7 @@ public class AddCommand extends Command {
 
     @Override
     public void execute() throws BearBotException {
-        if (this.taskList.getTasks().size() >= 100) {
+        if (this.taskList.getSize() >= 100) {
             throw new TaskLimitException();
         }
 
@@ -56,8 +57,8 @@ public class AddCommand extends Command {
 
         taskList.addTask(newTask);
         System.out.println("Got it. I've added this task:");
-        System.out.println(newTask);
-        System.out.println("Now you have " + taskList.getTasks().size() + " tasks in the list.");
+        System.out.println(newTask.toString());
+        System.out.println("Now you have " + taskList.getSize() + " tasks in the list.");
     }
 }
 
@@ -74,7 +75,7 @@ public class AddCommand extends Command {
 
     @Override
     public void execute() throws BearBotException {
-        if (this.taskList.getTasks().size() >= 100) {
+        if (this.taskList.getSize() >= 100) {
             throw new TaskLimitException();
         }
 
@@ -119,8 +120,8 @@ public class AddCommand extends Command {
                 throw new BearBotException("Invalid command: " + taskType);
         }
         System.out.println("Got it. I've added this task:");
-        System.out.println(taskList.getTasks().get(taskList.getTasks().size() - 1));
-        System.out.println("Now you have " + taskList.getTasks().size() + " tasks in the list.");
+        System.out.println(taskList.getSize().get(taskList.getSize() - 1));
+        System.out.println("Now you have " + taskList.getSize() + " tasks in the list.");
     }
 }
 */

@@ -16,12 +16,12 @@ public class DeleteCommand extends Command {
 
     @Override
     public void execute() throws BearBotException {
-        if (index < 0 || index >= taskList.getTasks().size()) {
+        if (index < 0 || index >= taskList.getSize()) {
             throw new BearBotException("Task index is out of range!");
         }
         taskList.removeTask(index);
         System.out.println("Out of the honey jar!");
-        System.out.println(taskList.getTasks().get(index));
-        System.out.println("Now you have " + taskList.getTasks().size() + " tasks in the list.");
+        System.out.println(taskList.getOneTask(index));
+        System.out.println("Now you have " + taskList.getSize() + " tasks in the list.");
     }
 }
