@@ -1,21 +1,19 @@
 package bearbot.commands;
 
-import bearbot.tasks.Task;
-
-import java.util.List;
+import bearbot.tasks.TaskList;
 
 public class ListCommand extends Command {
-    private List<Task> tasks;
+    private final TaskList taskList;
 
-    public ListCommand(List<Task> tasks) {
-        this.tasks = tasks;
+    public ListCommand(TaskList taskList) {
+        this.taskList = taskList;
     }
 
     @Override
     public void execute() {
         System.out.println("Here are the tasks in your list:");
-        for (int i = 0; i < this.tasks.size(); i++) {
-            System.out.println((i + 1) + ". " + tasks.get(i));
+        for (int i = 0; i < taskList.getTasks().size(); i++) {
+            System.out.println((i + 1) + ". " + taskList.getTasks().get(i));
         }
     }
 }

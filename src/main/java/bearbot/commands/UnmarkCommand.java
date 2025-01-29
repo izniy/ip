@@ -1,22 +1,25 @@
 package bearbot.commands;
 
-import bearbot.tasks.Task;
-import java.util.List;
+import bearbot.exceptions.BearBotException;
+import bearbot.tasks.TaskList;
 
 public class UnmarkCommand extends Command {
-    private List<Task> tasks;
-    private int index;
+    private final TaskList taskList;
+    private final int index;
 
-    public UnmarkCommand(List<Task> tasks, int index) {
-        this.tasks = tasks;
+    public UnmarkCommand(TaskList taskList, int index) {
+        this.taskList = taskList;
         this.index = index;
     }
 
     @Override
-    public void execute() {
-        this.tasks.get(index).markAsNotDone();
+    public void execute() throws BearBotException {
+        if (index < 0 || index >= taskList.getTasks().size()) {
+            throw new BearBotException("Task index is out of range!");
+        }
+        taskList.unmarkTask(index);
         System.out.println("OK, I've marked this task as not done yet:");
-        System.out.println(this.tasks.get(index));
+        System.out.println(taskList.getTasks().get(index));
     }
 
 }
