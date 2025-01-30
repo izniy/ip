@@ -1,11 +1,17 @@
 package bearbot.commands;
 
-import bearbot.Ui;
 import bearbot.exceptions.*;
 import bearbot.tasks.*;
 
 import java.time.LocalDate;
 
+/**
+ * Represents a command to add a new task to the task list.
+ * Supports adding three types of tasks:
+ * {@link Todo} - A simple task without a deadline.
+ * {@link Deadline} - A task with a specific due date.
+ * {@link Event} - A task that occurs within a date range.
+ */
 public class AddCommand extends Command {
     private final TaskList taskList;
     private final String description;
@@ -13,7 +19,12 @@ public class AddCommand extends Command {
     private final LocalDate startDate;
     private final LocalDate endDate;
 
-    // Constructor for Todo
+    /**
+     * Constructs an {@code AddCommand} to add a {@link Todo} task.
+     *
+     * @param taskList    The task list to which the task will be added.
+     * @param description The description of the todo task.
+     */
     public AddCommand(TaskList taskList, String description) {
         this.taskList = taskList;
         this.description = description;
@@ -22,7 +33,13 @@ public class AddCommand extends Command {
         this.endDate = null;
     }
 
-    // Constructor for Deadline
+    /**
+     * Constructs an {@code AddCommand} to add a {@link Deadline} task.
+     *
+     * @param taskList    The task list to which the task will be added.
+     * @param description The description of the deadline task.
+     * @param date        The due date of the deadline task.
+     */
     public AddCommand(TaskList taskList, String description, LocalDate date) {
         this.taskList = taskList;
         this.description = description;
@@ -31,7 +48,14 @@ public class AddCommand extends Command {
         this.endDate = null;
     }
 
-    // Constructor for Event
+    /**
+     * Constructs an {@code AddCommand} to add an {@link Event} task.
+     *
+     * @param taskList    The task list to which the task will be added.
+     * @param description The description of the event task.
+     * @param startDate   The start date of the event.
+     * @param endDate     The end date of the event.
+     */
     public AddCommand(TaskList taskList, String description, LocalDate startDate, LocalDate endDate) {
         this.taskList = taskList;
         this.description = description;
@@ -40,6 +64,12 @@ public class AddCommand extends Command {
         this.date = null;
     }
 
+    /**
+     * Executes the command by adding the appropriate task to the task list.
+     * The task is added to the task list, and a confirmation message is displayed.
+     *
+     * @throws BearBotException If the task list reaches its limit.
+     */
     @Override
     public void execute() throws BearBotException {
         if (this.taskList.getSize() >= 100) {

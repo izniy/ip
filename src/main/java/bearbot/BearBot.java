@@ -2,6 +2,7 @@ package bearbot;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import bearbot.commands.*;
 import bearbot.exceptions.*;
 import bearbot.storage.Storage;
