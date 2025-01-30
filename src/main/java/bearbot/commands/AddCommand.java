@@ -8,9 +8,9 @@ import java.time.LocalDate;
 /**
  * Represents a command to add a new task to the task list.
  * Supports adding three types of tasks:
- *     {@link Todo} - A simple task without a deadline.
- *     {@link Deadline} - A task with a specific due date.
- *     {@link Event} - A task that occurs within a date range.
+ * {@link Todo} - A simple task without a deadline.
+ * {@link Deadline} - A task with a specific due date.
+ * {@link Event} - A task that occurs within a date range.
  */
 public class AddCommand extends Command {
     private final TaskList taskList;

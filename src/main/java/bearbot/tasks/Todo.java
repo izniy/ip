@@ -10,7 +10,7 @@ public class Todo extends Task {
      * Constructs a new Todo task with the specified description and completion status.
      *
      * @param description The description of the task.
-     * @param isDone {@code true} if the task is marked as done, {@code false} otherwise.
+     * @param isDone      {@code true} if the task is marked as done, {@code false} otherwise.
      */
     public Todo(String description, boolean isDone) {
         super(description, isDone);

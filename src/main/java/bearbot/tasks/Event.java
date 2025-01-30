@@ -15,9 +15,9 @@ public class Event extends Task {
      * Constructs a new Event task with the specified description, start date, end date, and completion status.
      *
      * @param description The description of the event.
-     * @param start The starting date of the event.
-     * @param end The ending date of the event.
-     * @param isDone {@code true} if the event is marked as done, {@code false} otherwise.
+     * @param start       The starting date of the event.
+     * @param end         The ending date of the event.
+     * @param isDone      {@code true} if the event is marked as done, {@code false} otherwise.
      */
     public Event(String description, LocalDate start, LocalDate end, boolean isDone) {
         super(description, isDone);

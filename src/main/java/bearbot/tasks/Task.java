@@ -14,7 +14,7 @@ public abstract class Task {
      * Constructs a new {@code Task} with the specified description and completion status.
      *
      * @param description The description of the task.
-     * @param isDone {@code true} if the task is marked as done, {@code false} otherwise.
+     * @param isDone      {@code true} if the task is marked as done, {@code false} otherwise.
      */
     public Task(String description, boolean isDone) {
         this.description = description;
@@ -44,14 +44,14 @@ public abstract class Task {
         String description = parts[2];
 
         switch (type) {
-            case "T":
-                return new Todo(description, isDone);
-            case "D":
-                return new Deadline(description, LocalDate.parse(parts[3]), isDone);
-            case "E":
-                return new Event(description, LocalDate.parse(parts[3]), LocalDate.parse(parts[4]), isDone);
-            default:
-                throw new IllegalArgumentException("Invalid task type in storage file");
+        case "T":
+            return new Todo(description, isDone);
+        case "D":
+            return new Deadline(description, LocalDate.parse(parts[3]), isDone);
+        case "E":
+            return new Event(description, LocalDate.parse(parts[3]), LocalDate.parse(parts[4]), isDone);
+        default:
+            throw new IllegalArgumentException("Invalid task type in storage file");
         }
     }
 
