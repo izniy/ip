@@ -86,6 +86,12 @@ public class TaskList {
         saveTasks();
     }
 
+    public List<Task> findTasks(String keyword) {
+        return tasks.stream()
+                .filter(task -> task.getDescription().contains(keyword))
+                .toList();
+    }
+
     /**
      * Saves the current task list to storage.
      * Prints an error message if saving fails.
