@@ -28,6 +28,12 @@ public class Parser {
                 return parseDeadline(words[1], taskList);
             case "event":
                 return parseEvent(words[1], taskList);
+            case "find":
+                if (words.length < 2) {
+                    System.out.println("Please provide a keyword to search for.");
+                    return null;
+                }
+                return new FindCommand(taskList, words[1]);
             default:
                 throw new BearBotException("Unknown command: " + commandWord);
         }

@@ -47,6 +47,12 @@ public class TaskList {
         saveTasks();
     }
 
+    public List<Task> findTasks(String keyword) {
+        return tasks.stream()
+                .filter(task -> task.getDescription().contains(keyword))
+                .toList();
+    }
+
     private void saveTasks() {
         try {
             storage.save(tasks);
