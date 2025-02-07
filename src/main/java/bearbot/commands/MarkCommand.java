@@ -15,7 +15,7 @@ public class MarkCommand extends Command {
      * Constructs a {@code MarkCommand} with the specified task list and task index.
      *
      * @param taskList The task list that contains the task to be marked.
-     * @param index The zero-based index of the task to be marked as done.
+     * @param index    The zero-based index of the task to be marked as done.
      */
     public MarkCommand(TaskList taskList, int index) {
         this.taskList = taskList;
@@ -24,19 +24,18 @@ public class MarkCommand extends Command {
 
     /**
      * Executes the command by marking the task at the specified index as done.
-     *
+     * <p>
      * If the index is invalid (out of range), a {@link BearBotException} is thrown.
      * Otherwise, the task is updated, and a confirmation message is displayed.
      *
      * @throws BearBotException If the specified index is out of range.
      */
     @Override
-    public void execute() throws BearBotException {
+    public String execute() throws BearBotException {
         if (index < 0 || index >= taskList.getSize()) {
             throw new BearBotException("Task index is out of range!");
         }
         taskList.markTask(index);
-        System.out.println("Nice! I've marked this task as done:");
-        System.out.println(taskList.getOneTask(index));
+        return "Nice! I've marked this task as done:\n" + taskList.getOneTask(index);
     }
 }

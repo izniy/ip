@@ -1,4 +1,4 @@
-package bearbot;
+package bearbot.ui;
 
 /**
  * Handles the display of system messages to the user.

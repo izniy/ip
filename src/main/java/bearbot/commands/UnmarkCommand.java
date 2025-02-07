@@ -25,20 +25,19 @@ public class UnmarkCommand extends Command {
 
     /**
      * Executes the command by marking the task at the specified index as not done.
-     *
+     * <p>
      * If the index is invalid (out of range), a {@link BearBotException} is thrown.
      * Otherwise, the task is updated, and a confirmation message is displayed.
      *
      * @throws BearBotException If the specified index is out of range.
      */
     @Override
-    public void execute() throws BearBotException {
+    public String execute() throws BearBotException {
         if (index < 0 || index >= taskList.getSize()) {
             throw new BearBotException("Task index is out of range!");
         }
         taskList.unmarkTask(index);
-        System.out.println("OK, I've marked this task as not done yet:");
-        System.out.println(taskList.getOneTask(index));
+        return "OK, I've marked this task as not done yet:\n" + taskList.getOneTask(index);
     }
 
 }

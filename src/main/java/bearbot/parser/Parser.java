@@ -14,28 +14,28 @@ public class Parser {
         String commandWord = words[0];
 
         switch (commandWord) {
-            case "list":
-                return new ListCommand(taskList);
-            case "mark":
-                return new MarkCommand(taskList, Integer.parseInt(words[1]) - 1);
-            case "unmark":
-                return new UnmarkCommand(taskList, Integer.parseInt(words[1]) - 1);
-            case "delete":
-                return new DeleteCommand(taskList, Integer.parseInt(words[1]) - 1);
-            case "todo":
-                return new AddCommand(taskList, words[1]); // Todo doesn't need a date
-            case "deadline":
-                return parseDeadline(words[1], taskList);
-            case "event":
-                return parseEvent(words[1], taskList);
-            case "find":
-                if (words.length < 2) {
-                    System.out.println("Please provide a keyword to search for.");
-                    return null;
-                }
-                return new FindCommand(taskList, words[1]);
-            default:
-                throw new BearBotException("Unknown command: " + commandWord);
+        case "list":
+            return new ListCommand(taskList);
+        case "mark":
+            return new MarkCommand(taskList, Integer.parseInt(words[1]) - 1);
+        case "unmark":
+            return new UnmarkCommand(taskList, Integer.parseInt(words[1]) - 1);
+        case "delete":
+            return new DeleteCommand(taskList, Integer.parseInt(words[1]) - 1);
+        case "todo":
+            return new AddCommand(taskList, words[1]); // Todo doesn't need a date
+        case "deadline":
+            return parseDeadline(words[1], taskList);
+        case "event":
+            return parseEvent(words[1], taskList);
+        case "find":
+            if (words.length < 2) {
+                System.out.println("Please provide a keyword to search for.");
+                return null;
+            }
+            return new FindCommand(taskList, words[1]);
+        default:
+            throw new BearBotException("Unknown command: " + commandWord);
         }
     }
 

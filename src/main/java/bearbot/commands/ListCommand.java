@@ -23,10 +23,15 @@ public class ListCommand extends Command {
      * If the task list is empty, it still displays a message without tasks.
      */
     @Override
-    public void execute() {
-        System.out.println("Here are the tasks in your list:");
-        for (int i = 0; i < taskList.getSize(); i++) {
-            System.out.println((i + 1) + ". " + taskList.getOneTask(i));
+    public String execute() {
+        if (taskList.getSize() == 0) {
+            return "Your task list is empty!";
         }
+
+        StringBuilder response = new StringBuilder("Here are the tasks in your list:\n");
+        for (int i = 0; i < taskList.getSize(); i++) {
+            response.append(i + 1).append(". ").append(taskList.getOneTask(i)).append("\n");
+        }
+        return response.toString();
     }
 }

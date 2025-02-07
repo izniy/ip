@@ -26,14 +26,14 @@ public class DeleteCommand extends Command {
 
     /**
      * Executes the command by deleting the task at the specified index from the task list.
-     *
+     * <p>
      * If the index is invalid (out of range), a {@link BearBotException} is thrown.
      * Otherwise, the task is removed, and a confirmation message is displayed.
      *
      * @throws BearBotException If the specified index is out of range.
      */
     @Override
-    public void execute() throws BearBotException {
+    public String execute() throws BearBotException {
         if (index < 0 || index >= taskList.getSize()) {
             throw new BearBotException("Task index is out of range!");
         }
@@ -41,8 +41,8 @@ public class DeleteCommand extends Command {
         Task toRemove = taskList.getOneTask(index);
         taskList.removeTask(index);
 
-        System.out.println("Out of the honey jar!");
-        System.out.println(toRemove);
-        System.out.println("Now you have " + taskList.getSize() + " tasks in the list.");
+        return "Out of the honey jar! 🍯\n"
+                + toRemove.toString() + "\n"
+                + "Now you have " + taskList.getSize() + " tasks in the list.";
     }
 }

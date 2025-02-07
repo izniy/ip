@@ -71,7 +71,7 @@ public class AddCommand extends Command {
      * @throws BearBotException If the task list reaches its limit.
      */
     @Override
-    public void execute() throws BearBotException {
+    public String execute() throws BearBotException {
         if (this.taskList.getSize() >= 100) {
             throw new TaskLimitException();
         }
@@ -86,9 +86,9 @@ public class AddCommand extends Command {
         }
 
         taskList.addTask(newTask);
-        System.out.println("Got it. I've added this task:");
-        System.out.println(newTask.toString());
-        System.out.println("Now you have " + taskList.getSize() + " tasks in the list.");
+        return "Got it. I've added this task:\n"
+                + newTask.toString() + "\n"
+                + "Now you have " + taskList.getSize() + " tasks in the list.";
     }
 }
 

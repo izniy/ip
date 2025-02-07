@@ -14,8 +14,8 @@ public class Deadline extends Task {
      * Constructs a new Deadline task with the specified description, due date, and completion status.
      *
      * @param description The description of the deadline task.
-     * @param dueDate The due date of the task.
-     * @param isDone {@code true} if the task is marked as done, {@code false} otherwise.
+     * @param dueDate     The due date of the task.
+     * @param isDone      {@code true} if the task is marked as done, {@code false} otherwise.
      */
     public Deadline(String description, LocalDate dueDate, boolean isDone) {
         super(description, isDone);
@@ -41,7 +41,7 @@ public class Deadline extends Task {
      * Returns a string representation of this Deadline task, including its type, status, and due date.
      * The format follows: {@code "[D][X] description (by: MMM d yyyy)"} for completed deadlines
      * and {@code "[D][ ] description (by: MMM d yyyy)"} for incomplete deadlines.
-     *
+     * <p>
      * The due date is formatted using {@code "MMM d yyyy"} (e.g., "Feb 1 2025").
      *
      * @return A string representing the Deadline task.
