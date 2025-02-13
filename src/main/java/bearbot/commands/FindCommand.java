@@ -29,12 +29,12 @@ public class FindCommand extends Command {
 
         if (matchingTasks.isEmpty()) {
             return "Honey jar is empty! No matching tasks found!";
-        } else {
-            StringBuilder response = new StringBuilder("Here are the matching tasks:\n");
-            for (int i = 0; i < matchingTasks.size(); i++) {
-                response.append(i + 1).append(". ").append(matchingTasks.get(i)).append("\n");
-            }
-            return response.toString();
         }
+
+        StringBuilder response = new StringBuilder("Here are the matching tasks:\n");
+        for (int i = 0; i < matchingTasks.size(); i++) {
+            response.append(i + 1).append(". ").append(matchingTasks.get(i)).append("\n");
+        }
+        return response.toString();
     }
 }
