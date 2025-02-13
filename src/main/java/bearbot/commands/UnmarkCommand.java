@@ -33,9 +33,8 @@ public class UnmarkCommand extends Command {
      */
     @Override
     public String execute() throws BearBotException {
-        if (index < 0 || index >= taskList.getSize()) {
-            throw new BearBotException("Task index is out of range!");
-        }
+        assert index >= 0 && index < taskList.getSize() : "Task index is out of range";
+        
         taskList.unmarkTask(index);
         return "OK, I've marked this task as not done yet:\n" + taskList.getOneTask(index);
     }
