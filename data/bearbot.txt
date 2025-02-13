@@ -1,0 +1,3 @@
+T | 0 | Remember to pack
+T | 1 | Cafe Hopping
+T | 1 | Do Homework
