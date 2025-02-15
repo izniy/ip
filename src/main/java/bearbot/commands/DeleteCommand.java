@@ -34,9 +34,7 @@ public class DeleteCommand extends Command {
      */
     @Override
     public String execute() throws BearBotException {
-        if (index < 0 || index >= taskList.getSize()) {
-            throw new BearBotException("Task index is out of range!");
-        }
+        assert index >= 0 && index < taskList.getSize() : "Task index is out of range";
 
         Task toRemove = taskList.getOneTask(index);
         taskList.removeTask(index);

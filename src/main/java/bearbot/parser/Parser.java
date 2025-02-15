@@ -34,6 +34,8 @@ public class Parser {
                 return null;
             }
             return new FindCommand(taskList, words[1]);
+        case "archive":
+            return new ArchiveCommand(taskList);
         default:
             throw new BearBotException("Unknown command: " + commandWord);
         }

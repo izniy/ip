@@ -32,9 +32,8 @@ public class MarkCommand extends Command {
      */
     @Override
     public String execute() throws BearBotException {
-        if (index < 0 || index >= taskList.getSize()) {
-            throw new BearBotException("Task index is out of range!");
-        }
+        assert index >= 0 && index < taskList.getSize() : "Task index is out of range";
+
         taskList.markTask(index);
         return "Nice! I've marked this task as done:\n" + taskList.getOneTask(index);
     }

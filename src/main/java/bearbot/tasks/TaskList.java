@@ -132,4 +132,12 @@ public class TaskList {
     public Task getOneTask(int index) {
         return tasks.get(index);
     }
+
+    /**
+     * Clears all tasks from the task list and updates storage.
+     */
+    public void clearTasks() {
+        tasks.clear(); // Remove all tasks
+        saveTasks();   // Ensure storage reflects this change
+    }
 }
