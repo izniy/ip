@@ -1,2 +1,2 @@
-T | 0 | Be Happy
+T | 1 | Be Happy
 T | 0 | Be Sad

@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
 
 public class Parser {
     public static Command parse(String input, TaskList taskList) throws BearBotException {
+        input = cleanInput(input);
         String[] words = input.split(" ", 2);
         String commandWord = words[0];
 
@@ -39,6 +40,10 @@ public class Parser {
         default:
             throw new BearBotException("Unknown command: " + commandWord);
         }
+    }
+
+    private static String cleanInput(String input) {
+        return input.trim().replaceAll("\\s+", " ");
     }
 
     private static Command parseDeadline(String args, TaskList taskList) throws BearBotException {
