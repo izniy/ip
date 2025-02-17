@@ -19,8 +19,6 @@ Plus, with its **cute bear personality**, you'll never feel alone while tackling
 ✅ **Task Management:** Add, delete, mark, unmark and list tasks  
 ✅ **Deadlines & Events:** Schedule tasks with specific due dates  
 ✅ **Data Persistence:** Saves tasks automatically between sessions
-✅ **Archiving:** Remove all completed tasks with a single command
-
 
 ## 📖 How to Use BearBot
 ### 1️⃣ Adding a Todo Task
