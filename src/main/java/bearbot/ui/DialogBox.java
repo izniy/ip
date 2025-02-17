@@ -24,7 +24,7 @@ public class DialogBox extends HBox {
     @FXML
     private ImageView displayPicture;
 
-    private DialogBox(String text, Image img) {
+    private DialogBox(String text, Image img, boolean isUser) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(MainWindow.class.getResource("/view/DialogBox.fxml"));
             fxmlLoader.setController(this);
@@ -36,6 +36,14 @@ public class DialogBox extends HBox {
 
         dialog.setText(text);
         displayPicture.setImage(img);
+
+        if (isUser) {
+            dialog.setStyle("-fx-background-color: #CDA4DE; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 10;");
+            this.setAlignment(Pos.TOP_RIGHT);
+        } else {
+            dialog.setStyle("-fx-background-color: #E5E5EA; -fx-text-fill: black; -fx-background-radius: 10; -fx-padding: 10;");
+            this.setAlignment(Pos.TOP_LEFT);
+        }
     }
 
     /**
@@ -49,11 +57,11 @@ public class DialogBox extends HBox {
     }
 
     public static DialogBox getUserDialog(String text, Image img) {
-        return new DialogBox(text, img);
+        return new DialogBox(text, img, true);
     }
 
     public static DialogBox getBearBotDialog(String text, Image img) {
-        var db = new DialogBox(text, img);
+        var db = new DialogBox(text, img, false);
         db.flip();
         return db;
     }
