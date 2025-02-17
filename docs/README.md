@@ -1,6 +1,6 @@
 # 🐻 BearBot - Your Personal Task Assistant
 
-![BearBot Screenshot](https://raw.githubusercontent.com/izniy/ip/main/docs/Ui.png)
+![Ui picture](./docs/Ui.png)
 
 Tired of forgetting deadlines? 
 Overwhelmed by your to-do list? 
