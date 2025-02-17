@@ -1,6 +1,6 @@
 # 🐻 BearBot - Your Personal Task Assistant
 
-![BearBot Screenshot](docs/Ui.png)
+![BearBot GUI](docs/Ui.png)
 
 Tired of forgetting deadlines? 
 Overwhelmed by your to-do list? 
@@ -14,11 +14,13 @@ BearBot keeps things fun, friendly, and efficient!
 With BearBot, managing your tasks is as easy as having a chat. 
 Plus, with its **cute bear personality**, you'll never feel alone while tackling your to-do list! 🐾💙
 
+
 ## 🚀 Features
 ✅ **Task Management:** Add, delete, mark, unmark and list tasks  
 ✅ **Deadlines & Events:** Schedule tasks with specific due dates  
 ✅ **Data Persistence:** Saves tasks automatically between sessions
 ✅ **Archiving:** Remove all completed tasks with a single command
+
 
 ## 📖 How to Use BearBot
 ### 1️⃣ Adding a Todo Task
@@ -98,6 +100,7 @@ archive
 ```
 bye
 ```
+
 
 ## 📜 Credits & Attributions
 BearBot includes images sourced from external creators. Below are the proper attributions:
