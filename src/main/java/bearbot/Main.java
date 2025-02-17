@@ -23,7 +23,7 @@ public class Main extends Application {
             AnchorPane ap = fxmlLoader.load();
             Scene scene = new Scene(ap);
             stage.setScene(scene);
-            fxmlLoader.<MainWindow>getController().setBearBot(bearBot);  // inject the BearBot instance
+            fxmlLoader.<MainWindow>getController().setBearBot(bearBot);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

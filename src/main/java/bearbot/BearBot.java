@@ -103,8 +103,8 @@ public class BearBot {
      */
     private void saveTasksOnExit() {
         try {
-            storage.save(taskList.getTasks()); // Save before exiting
-            System.out.println("Tasks saved successfully!"); // Log to console
+            storage.save(taskList.getTasks());
+            System.out.println("Tasks saved successfully!");
         } catch (Exception e) {
             System.out.println("Error saving tasks.");
         }
