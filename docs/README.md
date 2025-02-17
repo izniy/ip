@@ -1,6 +1,6 @@
 # 🐻 BearBot - Your Personal Task Assistant
 
-![BearBot GUI](docs/Ui.png)
+![BearBot GUI](/docs/Ui.png)
 
 Tired of forgetting deadlines? 
 Overwhelmed by your to-do list? 
