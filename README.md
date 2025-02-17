@@ -1,26 +1,110 @@
-# bearbot.BearBot project template
+# 🐻 BearBot - Your Personal Task Assistant
 
-This is a project template for a greenfield Java project. It's named after the Java mascot _Duke_. Given below are instructions on how to use it.
+![Ui picture](docs/Ui.png)
 
-## Setting up in Intellij
+Tired of forgetting deadlines? 
+Overwhelmed by your to-do list? 
+Meet **BearBot**, your adorable and reliable task management assistant! 🐻✨
 
-Prerequisites: JDK 17, update Intellij to the most recent version.
+BearBot is more than just a chatbot— it's your personal productivity buddy, 
+always ready to help you stay on top of your tasks with a simple and intuitive interface. 
+Whether you're tracking deadlines, planning events, or just organizing your daily to-dos, 
+BearBot keeps things fun, friendly, and efficient!
 
-1. Open Intellij (if you are not in the welcome screen, click `File` > `Close Project` to close the existing project first)
-1. Open the project into Intellij as follows:
-   1. Click `Open`.
-   1. Select the project directory, and click `OK`.
-   1. If there are any further prompts, accept the defaults.
-1. Configure the project to use **JDK 17** (not other versions) as explained in [here](https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk).<br>
-   In the same dialog, set the **Project language level** field to the `SDK default` option.
-1. After that, locate the `src/main/java/bearbot.BearBot.java` file, right-click it, and choose `Run bearbot.BearBot.main()` (if the code editor is showing compile errors, try restarting the IDE). If the setup is correct, you should see something like the below as the output:
-   ```
-   Hello from
-    ____        _        
-   |  _ \ _   _| | _____ 
-   | | | | | | | |/ / _ \
-   | |_| | |_| |   <  __/
-   |____/ \__,_|_|\_\___|
-   ```
+With BearBot, managing your tasks is as easy as having a chat. 
+Plus, with its **cute bear personality**, you'll never feel alone while tackling your to-do list! 🐾💙
 
-**Warning:** Keep the `src\main\java` folder as the root folder for Java files (i.e., don't rename those folders or move Java files to another folder outside of this folder path), as this is the default location some tools (e.g., Gradle) expect to find Java files.
+
+## 🚀 Features
+✅ **Task Management:** Add, delete, mark, unmark and list tasks  
+✅ **Deadlines & Events:** Schedule tasks with specific due dates  
+✅ **Data Persistence:** Saves tasks automatically between sessions
+✅ **Archiving:** Remove all completed tasks with a single command
+
+
+## 📖 How to Use BearBot
+### 1️⃣ Adding a Todo Task
+```
+todo Read a book
+```
+
+Expected output: 
+```
+Got it! I've added this task:
+[T][ ] Read a book
+```
+
+### 2️⃣ Adding a Deadline Task
+```
+deadline Submit report /by 2025-02-20
+```
+
+Expected output:
+```
+Got it! I've added this task:
+[D][ ] Submit report (by: Feb 20 2025)
+```
+
+### 3️⃣ Adding an Event
+```
+event Project meeting /from 2025-02-20 /to 2025-02-21
+```
+
+Expected output:
+```
+Got it! I've added this task:
+[E][ ] Project meeting (from: Feb 20 2025 to: Feb 21 2025)
+```
+
+### 4️⃣ Listing All Tasks
+```
+list
+```
+
+Expected output:
+```
+Here are your tasks:
+1. [T][ ] Read a book
+2. [D][ ] Submit report (by: Feb 20 2025)
+3. [E][ ] Project meeting (from: Feb 20 2025 to: Feb 21 2025)
+```
+
+### 5️⃣ Marking a Task as Done
+```
+mark 2
+```
+
+Expected output:
+```
+Nice! I've marked this task as done:
+[D][X] Submit report (by: Feb 20 2025)
+```
+
+### 6️⃣ Deleting a Task
+```
+delete 1
+```
+
+Expected output:
+```
+Noted. I've removed this task:
+[T][ ] Read a book
+```
+
+### 7️⃣ Archiving All Completed Tasks
+```
+archive
+```
+
+### 8️⃣ Exiting BearBot
+```
+bye
+```
+
+
+## 📜 Credits & Attributions
+BearBot includes images sourced from external creators. Below are the proper attributions:
+
+- **User Profile Image:** [Pinterest](https://in.pinterest.com/pin/761178774506401910/)
+- **BearBot Avatar:** [Google Images](https://images.app.goo.gl/QeC8tGJqBjA7c89s6)
+- **Background Image:** [Pinterest](https://pin.it/40vXE2KeK)  
