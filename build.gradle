@@ -28,7 +28,7 @@ test {
 }
 
 application {
-    mainClass.set("bearbot.BearBot")
+    mainClass.set("bearbot.Launcher")
 }
 
 shadowJar {
