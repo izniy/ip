@@ -31,6 +31,9 @@ public class MainWindow extends AnchorPane {
     @FXML
     public void initialize() {
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
+
+        dialogContainer.setStyle("-fx-background-image: url('/images/chat-bg.png');"
+                + "-fx-background-size: cover;");
     }
 
     /**
