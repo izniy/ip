@@ -21,7 +21,7 @@ public class Main extends Application {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/MainWindow.fxml"));
             AnchorPane ap = fxmlLoader.load();
-            Scene scene = new Scene(ap);
+            Scene scene = new Scene();
             stage.setScene(scene);
             stage.setTitle("BearBot");
             fxmlLoader.<MainWindow>getController().setBearBot(bearBot);
